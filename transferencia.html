@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferência de Ferramentas</title>
+    <style>
+        /* Estilos gerais do corpo */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Cor de fundo suave */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: flex-start; /* Alinha ícone e título ao topo */
+            justify-content: space-between;
+        }
+
+        /* Estilo do título */
+        h2 {
+            margin: 0;
+            margin-left: 20px; /* Espaçamento à esquerda do título */
+            font-size: 24px; /* Tamanho da fonte */
+            color: #343a40; /* Cor do texto */
+        }
+
+        /* Estilo do ícone de casa */
+        .home-icon {
+            font-size: 2rem; /* Tamanho do emoji */
+            cursor: pointer; /* Muda o cursor ao passar o mouse */
+            display: flex;
+            align-items: center; /* Alinha verticalmente o emoji */
+            color: #007bff; /* Cor do emoji */
+            transition: color 0.3s; /* Transição suave para a cor */
+        }
+
+        /* Efeito ao passar o mouse sobre o ícone */
+        .home-icon:hover {
+            color: #0056b3; /* Cor ao passar o mouse */
+        }
+
+        /* Estilo do formulário de transferência */
+        #transferenciaForm {
+            background-color: #fff; /* Fundo branco */
+            padding: 20px;
+            border-radius: 5px; /* Bordas arredondadas */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+            max-width: 400px; /* Largura máxima */
+            margin-right: 20px; /* Espaço à direita */
+            flex-grow: 1; /* Permite que o formulário ocupe o espaço disponível */
+        }
+
+        /* Estilo dos elementos do formulário */
+        label {
+            font-weight: bold; /* Negrito para os rótulos */
+        }
+
+        input, select {
+            width: 100%; /* Largura total do campo */
+            padding: 10px; /* Espaçamento interno */
+            margin: 5px 0; /* Margem vertical */
+            border: 1px solid #ced4da; /* Borda suave */
+            border-radius: 4px; /* Bordas arredondadas */
+        }
+
+        button {
+            background-color: #28a745; /* Cor de fundo do botão */
+            color: white; /* Cor do texto do botão */
+            border: none; /* Remove borda padrão */
+            border-radius: 4px; /* Bordas arredondadas */
+            padding: 10px 15px; /* Espaçamento interno */
+            cursor: pointer; /* Muda o cursor ao passar o mouse */
+            transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+        }
+
+        /* Efeito ao passar o mouse sobre o botão */
+        button:hover {
+            background-color: #218838; /* Cor ao passar o mouse */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home-icon" onclick="window.location.href='index.html'">🏠</div>
+    <h2>Tela de Transferência</h2>
+    
+    <div id="transferenciaForm">
+        <p>Nome de quem está lançando: <span id="nomeColaborador"></span></p>
+        <p>Data e Hora: <span id="dataHora"></span></p>
+        <form>
+            <label for="ferramenta">Ferramenta:</label>
+            <select id="ferramenta">
+                <!-- As ferramentas serão preenchidas aqui via JavaScript -->
+            </select>
+
+            <label for="numeroSerie">N° de Série:</label>
+            <input type="text" id="numeroSerie" required>
+
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" required>
+
+            <label for="matricula">Matrícula de quem está recebendo:</label>
+            <input type="text" id="matricula" required>
+
+            <p>Nome: <span id="nomePessoa">Matrícula não encontrada</span></p>
+
+            <button type="button" onclick="confirmarTransferencia()">Confirmar Transferência</button>
+        </form>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+
+</html>

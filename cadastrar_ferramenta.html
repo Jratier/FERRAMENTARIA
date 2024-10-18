@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Ferramentas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cadastrar Ferramentas</h2>
+    <form id="formCadastro">
+        <label for="nome">Nome da Ferramenta:</label>
+        <input type="text" id="nome" required>
+
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" required>
+
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" required>
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao">
+
+        <button type="button" onclick="cadastrarFerramenta()">Cadastrar Ferramenta</button>
+    </form>
+
+    <script>
+        function cadastrarFerramenta() {
+            const nome = document.getElementById('nome').value;
+            const codigo = document.getElementById('codigo').value;
+            const quantidade = document.getElementById('quantidade').value;
+            const descricao = document.getElementById('descricao').value;
+
+            // Aqui você pode implementar a lógica para armazenar os dados,
+            // por exemplo, enviando para um banco de dados ou API.
+
+            alert(`Ferramenta cadastrada:\nNome: ${nome}\nCódigo: ${codigo}\nQuantidade: ${quantidade}\nDescrição: ${descricao}`);
+            document.getElementById('formCadastro').reset();
+        }
+    </script>
+</body>
+</html>
